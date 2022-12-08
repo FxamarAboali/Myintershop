@@ -1,3 +1,5 @@
+import { AddressDoctorConfig } from 'src/app/extensions/address-doctor/models/address-doctor-config.model';
+
 import { Auth0Config } from 'ish-core/identity-provider/auth0.identity-provider';
 import { CookieConsentOptions } from 'ish-core/models/cookies/cookies.model';
 import { DeviceType, ViewType } from 'ish-core/models/viewtype/viewtype.types';
@@ -45,6 +47,7 @@ export interface Environment {
     | 'tracking'
     | 'tacton'
     | 'maps'
+    | 'addressDoctor'
   )[];
 
   /* ADDITIONAL FEATURE CONFIGURATIONS */
@@ -60,6 +63,9 @@ export interface Environment {
 
   // tacton integration
   tacton?: TactonConfig;
+
+  // address doctor integration
+  addressDoctor?: AddressDoctorConfig;
 
   /* PROGRESSIVE WEB APP CONFIGURATIONS */
 
