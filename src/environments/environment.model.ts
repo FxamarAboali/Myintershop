@@ -45,6 +45,7 @@ export interface Environment {
     | 'tracking'
     | 'tacton'
     | 'maps'
+    | 'sparque'
   )[];
 
   /* ADDITIONAL FEATURE CONFIGURATIONS */
@@ -132,6 +133,8 @@ export interface Environment {
    * - 'stable': only fetch prices once per application lifetime
    */
   priceUpdate: 'stable' | 'always';
+
+  sparqueBaseURL?: string;
 }
 
 export const ENVIRONMENT_DEFAULTS: Omit<Environment, 'icmChannel'> = {
@@ -190,4 +193,6 @@ export const ENVIRONMENT_DEFAULTS: Omit<Environment, 'icmChannel'> = {
     tacton: 'forever',
   },
   priceUpdate: 'always',
+
+  sparqueBaseURL: 'https://rest.spinque.com/4/testintershop/api/PWA',
 };
