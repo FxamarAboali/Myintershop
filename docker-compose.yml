@@ -107,3 +107,7 @@ services:
           - baseHref: /b2c
             channel: default
             theme: b2c
+networks:
+  default:
+    name: a-responsive-network
+
