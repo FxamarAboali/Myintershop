@@ -21,7 +21,7 @@ So if you want to upgrade to new PWA versions later, stick to the following reco
 ## Set up an Intershop PWA-based Project
 
 When initially setting up an Intershop PWA-based project it is not advisable to clone the complete GitHub repository of the Intershop PWA.
-All that is needed  initially is the `master` branch that includes the released versions of the PWA.
+All that is needed initially is the `master` branch that includes the released versions of the PWA.
 This can be achieved with the following Git command.
 
 ```

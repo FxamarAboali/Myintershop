@@ -13,7 +13,7 @@ In addition, the PWA, when run with Angular Universal, consists of a server-side
 
 ## Ways of Configuring Angular Applications
 
-> **_Note:_** If available, always prefer configuration via system environment variables and running the PWA with Universal Rendering.
+> :warning: If available, always prefer configuration via system environment variables and running the PWA with Universal Rendering.
 
 ### Angular CLI Environments
 
@@ -48,7 +48,7 @@ import { InjectSingle } from 'ish-core/utils/injection';
 constructor(@Inject(PROPERTY) private property: InjectSingle<typeof PROPERTY>)
 ```
 
-As can be seen here, only build-time and deploy-time configuration Parameters can be supplied this way.
+As can be seen here, only build-time and deploy-time configuration parameters can be supplied this way.
 
 ### Node.js Environment Variables
 
@@ -154,7 +154,7 @@ Of course, the ICM server must supply appropriate REST resources to leverage fun
 | Feature Toggle               | Description of Enabled Feature                                                                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | compare                      | Product compare feature (additional configuration via `dataRetention` configuration options)                                                    |
-| contactUs                    | Allow the user to contact the website provider via a contact web form                                                                          |
+| contactUs                    | Allow the user to contact the website provider via a contact web form                                                                           |
 | extraConfiguration           | Fetch extra configuration information from _Configuration_ CMS component for [configurable themes etc.](../guides/themes.md#configurable-theme) |
 | productNotifications         | Product notifications feature for price and in stock notifications                                                                              |
 | rating                       | Display product ratings                                                                                                                         |

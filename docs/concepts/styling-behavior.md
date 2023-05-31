@@ -41,13 +41,16 @@ To integrate an icon:
 
 1. Open the appropriate page icon details, e.g. https://fontawesome.com/icons/print?s=solid&f=classic
 2. Copy only the name of the icon without the "fa-" prefix, in this case `print`
-  ```html
-  <i class="fa-solid fa-print"></i>
-  ```
+
+```html
+<i class="fa-solid fa-print"></i>
+```
+
 3. Use the icon name with following syntax
-  ```html
-  <fa-icon [icon]="['fas', 'print']"></fa-icon>
-  ```
+
+```html
+<fa-icon [icon]="['fas', 'print']"></fa-icon>
+```
 
 If an icon is not available yet, you need to add it to `src\app\core\icon.module.ts` in the `import {}` and the `constructor(){}`.
 
