@@ -36,66 +36,49 @@
       ></ish-info-message>
     </ng-template>
 
-    <div class="row">
-      <label class="col-4 col-md-3 col-xl-2 col-form-label">{{
-        'quote.edit.unsubmitted.quote_no.label' | translate
-      }}</label>
-      <div class="col-8 col-md-9 col-xl-10">
-        <p class="form-control-plaintext" data-testing-id="quoteId" [attr.data-quote-id]="quote.id">
-          {{ quote.number }}
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <label class="col-4 col-md-3 col-xl-2 col-form-label">{{
-        'quote.edit.unsubmitted.status.label' | translate
-      }}</label>
-      <div class="col-8 col-md-9 col-xl-10">
-        <p class="form-control-plaintext"><ish-quote-state [quoteId]="quote.id"></ish-quote-state></p>
-      </div>
-    </div>
-
-    <!-- Shows the valid from/to date  -->
-    <div *ngIf="state === 'Responded'" class="row">
-      <label class="col-4 col-md-3 col-xl-2 col-form-label">{{
-        'quote.edit.unsubmitted.valid.label' | translate
-      }}</label>
-      <div class="col-8 col-md-9 col-xl-10">
-        <p class="form-control-plaintext">
-          {{ asQuote(quote).validFromDate | ishDate : 'shortDate' }} -
-          {{ asQuote(quote).validToDate | ishDate : 'shortDate' }}
-        </p>
-      </div>
-    </div>
-
     <div class="section">
-      <!-- displayName -->
-      <div class="row has-feedback">
-        <label class="col-4 col-md-3 col-xl-2 col-form-label">{{
-          'quote.edit.unsubmitted.name.label' | translate
-        }}</label>
-        <div class="col-8 col-md-9 col-xl-10">
-          <p class="form-control-plaintext">{{ quote.displayName }}</p>
-        </div>
-      </div>
+      <dl class="row dl-horizontal dl-separator">
+        <!-- Quote No. -->
+        <dt class="col-6 col-sm-4 col-md-2">{{ 'quote.edit.unsubmitted.quote_no.label' | translate }}</dt>
+        <dd class="col-6 col-sm-8 col-md-10" data-testing-id="quoteId" [attr.data-quote-id]="quote.id">
+          {{ quote.number }}
+        </dd>
 
-      <div *ngIf="quote.description" class="row">
-        <label for="quote-description" class="col-4 col-md-3 col-xl-2 col-form-label">{{
-          'quote.edit.unsubmitted.comment.label' | translate
-        }}</label>
-        <div class="col-8 col-md-9 col-xl-10">
-          <p class="form-control-plaintext">{{ quote.description }}</p>
-        </div>
-      </div>
+        <!-- Status -->
+        <dt class="col-6 col-sm-4 col-md-2">{{ 'quote.edit.unsubmitted.status.label' | translate }}</dt>
+        <dd class="col-6 col-sm-8 col-md-10">
+          <ish-quote-state [quoteId]="quote.id"></ish-quote-state>
+        </dd>
 
-      <div *ngIf="asQuote(quote).sellerComment" class="row">
-        <label for="" class="col-4 col-md-3 col-xl-2 col-form-label">{{
-          'quote.edit.unsubmitted.seller_comment.label' | translate
-        }}</label>
-        <div class="col-8 col-md-9 col-xl-10">
-          <p class="form-control-plaintext">{{ asQuote(quote).sellerComment }}</p>
-        </div>
-      </div>
+        <!-- Shows the valid from/to date  -->
+        <ng-container *ngIf="state === 'Responded'">
+          <dt class="col-6 col-sm-4 col-md-2">{{ 'quote.edit.unsubmitted.valid.label' | translate }}</dt>
+          <dd class="col-6 col-sm-8 col-md-10">
+            {{ asQuote(quote).validFromDate | ishDate : 'shortDate' }} -
+            {{ asQuote(quote).validToDate | ishDate : 'shortDate' }}
+          </dd>
+        </ng-container>
+
+        <!-- displayName -->
+        <dt class="col-6 col-sm-4 col-md-2 has-feedback">{{ 'quote.edit.unsubmitted.name.label' | translate }}</dt>
+        <dd class="col-6 col-sm-8 col-md-10">
+          {{ quote.displayName }}
+        </dd>
+
+        <ng-container *ngIf="quote.description">
+          <dt class="col-6 col-sm-4 col-md-2">{{ 'quote.edit.unsubmitted.comment.label' | translate }}</dt>
+          <dd class="col-6 col-sm-8 col-md-10">
+            {{ quote.description }}
+          </dd>
+        </ng-container>
+
+        <ng-container *ngIf="asQuote(quote).sellerComment">
+          <dt class="col-6 col-sm-4 col-md-2">{{ 'quote.edit.unsubmitted.seller_comment.label' | translate }}</dt>
+          <dd class="col-6 col-sm-8 col-md-10">
+            {{ asQuote(quote).sellerComment }}
+          </dd>
+        </ng-container>
+      </dl>
     </div>
 
     <div class="section">
