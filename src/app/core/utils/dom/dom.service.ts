@@ -63,13 +63,13 @@ export class DomService {
   }
 
   /**
-   * Creates an text node with the given text and if a parent is given appends it to a parent element.
+   * Creates a text node with the given text and if a parent is given appends it to a parent element.
    *
-   * @param text    The text for the Text.
+   * @param text    The text string.
    * @param parent  The parent element.
-   * @returns       The created Text.
+   * @returns       The created element.
    */
-  createTextNode(text: string, parent?: HTMLElement): Text {
+  createTextNode(text: string, parent?: HTMLElement) {
     const textNode = this.renderer.createText(text);
     if (parent) {
       this.appendChild(parent, textNode);
